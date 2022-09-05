@@ -1,0 +1,29 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: cloud-payment-service
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/cloud?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: root
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.xiaobai.springcloud.entity
+eureka:
+  instance:
+    instance-id: payment8001
+    prefer-ip-address: true
+#    eureka客户端向服务端发送心跳的时间间隔
+    lease-renewal-interval-in-seconds: 1
+#    eureka服务端在收到最后一次心跳后等待时间间隔，超过这个时间间隔后，将服务剔除
+    lease-expiration-duration-in-seconds: 2
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://myeureka7001.com:7001/eureka
