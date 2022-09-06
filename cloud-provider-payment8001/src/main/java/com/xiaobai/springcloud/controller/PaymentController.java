@@ -46,4 +46,8 @@ public class PaymentController {
         }
         return new CommonResult<Payment>(ResultCode.FAIL);
     }
+    @GetMapping("/lb")
+    public String getPaymentLB(){
+        return serverPort;
+    }
 }

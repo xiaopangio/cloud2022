@@ -2,6 +2,7 @@ package com.xiaobai.springcloud.controller;
 
 import com.xiaobai.springcloud.entity.Payment;
 import com.xiaobai.springcloud.entity.result.CommonResult;
+import com.xiaobai.springcloud.lb.LoadBalance;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -27,6 +28,8 @@ public class OrderController  {
     @Resource
     private RestTemplate restTemplate;
     @Resource
+    private LoadBalance loadBalance;
+    @Resource
     private DiscoveryClient discoveryClient;
     @PostMapping("/payment/create")
     public CommonResult create(@RequestBody Payment payment){
@@ -47,5 +50,14 @@ public class OrderController  {
             log.info(instance.getServiceId()+"\t"+instance.getHost()+"\t"+instance.getPort()+"\t"+instance.getUri());
         }
         return this.discoveryClient;
+    }
+    @GetMapping("/payment/lb")
+    public String getPaymentLB(){
+        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+        if(instances==null||instances.size()<=0){
+            return null;
+        }
+        ServiceInstance instance = loadBalance.instances(instances);
+        return restTemplate.getForObject(instance.getUri()+"/payment/lb",String.class);
     }
 }
