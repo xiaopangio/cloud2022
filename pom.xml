@@ -31,6 +31,7 @@
         <mysql-connector-java.version>8.0.27</mysql-connector-java.version>
         <druid.version>1.2.11</druid.version>
         <mybatis-plus.version>3.4.2</mybatis-plus.version>
+
     </properties>
 
     <dependencyManagement>
