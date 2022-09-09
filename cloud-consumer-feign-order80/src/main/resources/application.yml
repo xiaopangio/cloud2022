@@ -6,3 +6,17 @@ eureka:
     service-url:
       defaultZone: http://myeureka7001.com:7001/eureka
     fetch-registry: true
+#    配置超时时间
+feign:
+  client:
+    config:
+      default:
+#        调用服务等待时间
+        read-timeout: 5000
+#        连接服务等待时间
+        connect-timeout: 5000
+
+logging:
+  level:
+#    以debug级别监控以下接口
+    com.xiaobai.springcloud.service.PaymentFeignService: debug
