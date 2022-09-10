@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * date: 2022/9/9 14:58
  * version: 1.0
  */
-@FeignClient(value = "CLOUD-PROVIDER-HYSTRIX-PAYMENT")
+@FeignClient(value = "CLOUD-PROVIDER-HYSTRIX-PAYMENT",fallback = PaymentFallbackService.class)
 public interface PaymentHystrixService {
     @GetMapping("/payment/hystrix/ok/{id}")
     public String paymentInfo_OK(@PathVariable("id")int id);

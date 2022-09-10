@@ -12,3 +12,6 @@ feign:
         connectTimeout: 5000
         readTimeout: 5000
         loggerLevel: full
+#        openfeign依赖自带hystrix，所以不需要再引入hystrix依赖,但是需要在配置文件中配置hystrix
+  hystrix:
+    enabled: true
