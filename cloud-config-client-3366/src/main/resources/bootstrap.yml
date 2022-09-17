@@ -1,8 +1,8 @@
 server:
-  port: 3355
+  port: 3366
 spring:
   application:
-    name: cloud-config-client-3355
+    name: cloud-config-client-3366
   cloud:
     config:
       uri: http://localhost:3344
@@ -20,7 +20,7 @@ spring:
     password: admin
 eureka:
   instance:
-    instance-id: cloud-config-client-3355
+    instance-id: cloud-config-client-3366
     prefer-ip-address: true
   client:
     service-url:

@@ -11,6 +11,11 @@ spring:
           search-paths:
             - springcloud-config
       label: master
+  rabbitmq:
+    host: 43.143.137.232
+    port: 5672
+    username: admin
+    password: admin
 eureka:
     instance:
         prefer-ip-address: true
@@ -20,3 +25,9 @@ eureka:
           defaultZone: http://myeureka7001.com:7001/eureka
         register-with-eureka: true
         fetch-registry: true
+#        暴露bus刷新配置端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "bus-refresh"
