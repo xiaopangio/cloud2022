@@ -1,0 +1,35 @@
+server:
+  port: 8801
+spring:
+  application:
+    name: cloud-stream-rabbitmq-provider
+  rabbitmq:
+    host: 43.143.137.232
+    port: 5672
+    username: admin
+    password: admin
+  cloud:
+    stream:
+      binders: # 绑定器
+        defaultRabbit: # 绑定器名称
+          type: rabbit # 绑定器类型
+          environment: # 绑定器环境
+            spring:
+              rabbitmq:
+                host: 43.143.137.232
+                port: 5672
+                username: admin
+                password: admin
+      bindings:
+        output:
+          destination: studyExchange # 消息队列名称
+          content-type: application/json # 消息队列类型
+          binder: defaultRabbit # 绑定器名称
+eureka:
+  instance:
+    instance-id: cloud-stream-rabbitmq-provider8801
+    prefer-ip-address: true
+  client:
+      service-url:
+        defaultZone: http://myeureka7001.com:7001/eureka
+

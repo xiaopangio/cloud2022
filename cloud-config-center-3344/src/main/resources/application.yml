@@ -7,9 +7,9 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/xiaopangio/springcloud-config.git
+          uri: https://github.com/xiaopangio/com.xiaobai.springcloud-config.git
           search-paths:
-            - springcloud-config
+            - com.xiaobai.springcloud-config
       label: master
   rabbitmq:
     host: 43.143.137.232

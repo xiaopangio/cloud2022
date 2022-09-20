@@ -1,0 +1,18 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloudalibaba-consumer-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 43.143.137.232:8848
+service-url:
+  nacos-user-service: http://cloudalibaba-provider-payment
+feign:
+  client:
+    config:
+        default:
+            connectTimeout: 5000
+            readTimeout: 5000
+            loggerLevel: full

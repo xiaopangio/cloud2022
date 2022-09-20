@@ -13,7 +13,7 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
   mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.xiaobai.springcloud.entity
+  type-aliases-package: com.xiaobai.com.xiaobai.springcloud.entity
 eureka:
   instance:
     instance-id: payment8001

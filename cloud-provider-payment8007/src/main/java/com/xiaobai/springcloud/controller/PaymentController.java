@@ -19,6 +19,6 @@ public class PaymentController {
     private String serverPort;
     @GetMapping(value = "/payment/consul")
     public String paymentConsul(){
-        return "springcloud with consul: "+serverPort+"\t"+System.currentTimeMillis();
+        return "com.xiaobai.springcloud with consul: "+serverPort+"\t"+System.currentTimeMillis();
     }
 }

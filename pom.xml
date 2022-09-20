@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.xiaobai.springcloud</groupId>
+    <groupId>com.xiaobai.com.xiaobai.springcloud</groupId>
     <artifactId>cloud2022</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>cloud2022</name>
@@ -24,6 +24,12 @@
         <module>cloud-config-center-3344</module>
         <module>cloud-config-client-3355</module>
         <module>cloud-config-client-3366</module>
+        <module>cloud-stream-rabbitmq-provider8801</module>
+        <module>cloud-stream-rabbitmq-consumer8802</module>
+        <module>cloud-stream-rabbitmq-consumer8803</module>
+        <module>cloudalibaba-provider-payment9001</module>
+        <module>cloudalibaba-provider-payment9002</module>
+        <module>cloudalibaba-consumer-order80</module>
     </modules>
 
     <properties>
